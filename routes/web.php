@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', 'App\Http\Controllers\FrontEndController@homePage');
+Route::get('/blog', 'App\Http\Controllers\FrontEndController@blogPage');
+Route::get('/blog-single', 'App\Http\Controllers\FrontEndController@singlePost');
+
+
+
 
 Auth::routes();
 
@@ -23,9 +28,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-
+// Category routes
 Route::resource('post-category', 'App\Http\Controllers\CategoryController');
 Route::get('post-category-edit/{id}', 'App\Http\Controllers\CategoryController@edit');
 Route::post('post-category-update', 'App\Http\Controllers\CategoryController@update') -> name('category.update');
 Route::get('post-category-unpublished/{id}', 'App\Http\Controllers\CategoryController@unpublishedCategory') -> name('category.unpublished');
 Route::get('post-category-published/{id}', 'App\Http\Controllers\CategoryController@publishedCategory') -> name('category.published');
+
+
+// Tag Routes
+Route::resource('tag', 'App\Http\Controllers\TagController');
+
+
+
+// Post Routes
+Route::resource('post', 'App\Http\Controllers\PostController');
+

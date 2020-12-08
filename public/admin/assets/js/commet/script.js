@@ -1,6 +1,12 @@
 (function($){
     $(document).ready(function(){
 
+        // POST DATATABLES
+        $('table.data-table').DataTable();
+
+        // CK Editor
+        CKEDITOR.replace('post_editor');
+
         // Logout system
         $('a#logout-button').click(function(e){
             e.preventDefault();
@@ -23,6 +29,15 @@
                 }
             });
 
+
+        });
+
+
+        // Post featured image load
+        $(document).on('change', "input#fimage", function(event){
+            event.preventDefault();
+            let post_image_url = URL.createObjectURL(event.target.files[0]);
+            $('img#post_featured_image_load').attr('src', post_image_url);
 
         });
 

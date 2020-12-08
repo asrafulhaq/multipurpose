@@ -11,6 +11,8 @@
 <script src="{{ asset('admin/assets/plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{ asset('admin/assets/plugins/morris/morris.min.js')}}"></script>
 <script src="{{ asset('admin/assets/js/chart.morris.js')}}"></script>
+<script src="{{ asset('admin/assets/js/datatables.min.js')}}"></script>
+<script src="//cdn.ckeditor.com/4.15.1/full/ckeditor.js"></script>
 
 <!-- Custom JS -->
 <script  src="{{ asset('admin/assets/js/script.js')}}"></script>
